@@ -1,0 +1,110 @@
+.tree a,
+.tree li:before,
+.tree li,
+.tree ul,
+.tree{
+	background:transparent;
+	box-sizing:border-box;
+	white-space:nowrap;
+	vertical-align:top;
+	border:0 solid #6e6b7b;
+	padding:0;
+	margin:0;
+	outline:0;
+	user-select:none
+}
+
+.tree a,
+.tree li,
+.tree ul,
+.tree{
+	color:#41414a;
+	text-align:left;
+	text-align-last:left;
+	font:500 14px/1.12em sans-serif
+}
+
+.tree li,
+.tree ul{
+	pointer-events:none;
+	list-style:none;
+	padding-bottom:.1em
+}
+
+.tree li>ul{padding-left:1em}
+
+.tree li{
+	min-width:3.5em;
+	margin-left:.35em;
+	position:relative
+}
+
+.tree li:before{
+	display:inline-block;
+	pointer-events:auto;
+	content:'\2022';
+	color:#6e6b7b;
+	border-bottom-width:thin;
+	text-align-last:right;
+	text-align:right;
+	font:1.15em/1em sans-serif;
+	text-indent:.5em;
+	margin-right:.26em;
+	width:.64em;
+	height:.5em
+}
+
+.tree li:first-child{padding-top:.2em}
+
+.tree li:last-child:before,
+.tree li:not(:last-child){border-left-width:thin}
+
+.tree a{
+	border-bottom:thin solid transparent;
+	pointer-events:auto;
+	display:inline-block;
+	margin-left:-.26em;
+	min-width:.8em
+}
+
+.tree.collapsable{padding-left:7px}
+.tree.collapsable a{cursor:pointer}
+.tree.collapsable > b:first-child{margin-left:-7px}
+
+.tree.collapsable .expanded > a{
+	border-image:linear-gradient(to right,#6e6b7b 0,#6e6b7b .7em,transparent .7em,transparent 100%) 1 stretch
+}
+
+.tree.collapsable .expanded > a:hover{
+	border-bottom-color:#6e6b7b;
+	border-image:linear-gradient(to right,#6e6b7b 0,#6e6b7b .7em,#6e6b7b .7em,transparent 100%) 1 stretch
+}
+
+.tree.collapsable .collapsed > ul{display:none}
+
+.tree li.collapsed:before{
+	font:1.61em/.7em sans-serif;
+	text-indent:.31em;
+	color:#41414a;
+	margin-right:.18em;
+	height:.355em;
+	width:.45em
+}
+
+.tree li.expanded:hover:before{color:#41414a}
+
+.tree input[type="checkbox"]{
+pointer-events:auto;
+font:400 12px/12px sans-serif;
+height:1em;
+width:1em;
+margin:0;
+outline:0;
+position:absolute;
+bottom:auto;
+right:auto;
+top:auto;
+left:-16px;
+}
+
+
